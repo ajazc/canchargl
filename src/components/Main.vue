@@ -1,23 +1,23 @@
 <template>
-  <main class="main">
-    <div class="container">
-      <section class="hero">
-        <h2>Tu Próximo Partido Comienza Acá</h2>
-        <p>Descubrí las mejores canchas de Río Gallegos y viví la pasión del fútbol al máximo.</p>
+  <main class="flex-1 py-8 bg-[#f8f9fa]">
+    <div class="max-w-[1200px] mx-auto px-8">
+      <section class="text-center mb-12">
+        <h2 class="text-[2.5rem] text-[#2c3e50] mb-4">Tu Próximo Partido Comienza Acá</h2>
+        <p class="text-[1.2rem] text-[#666]">Descubrí las mejores canchas de Río Gallegos y viví la pasión del fútbol al máximo.</p>
       </section>
 
       <section class="canchas-list">
-        <h3>Canchas Disponibles</h3>
-        <div class="canchas-grid">
-          <div v-for="cancha in canchas" :key="cancha.id" class="cancha-card">
-            <img :src="cancha.imagen" :alt="cancha.nombre" class="cancha-imagen">
-            <div class="cancha-info">
-              <h4>{{ cancha.nombre }}</h4>
-              <p class="ubicacion">{{ cancha.ubicacion }}</p>
-              <p class="tipo">{{ cancha.tipo }}</p>
-              <p class="telefono">{{ cancha.telefono }}</p>
-              <div class="caracteristicas">
-                <span v-for="caracteristica in cancha.caracteristicas" :key="caracteristica" class="tag">
+        <h3 class="text-[2rem] text-[#2c3e50] mb-8 text-center">Canchas Disponibles</h3>
+        <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 px-2">
+          <div v-for="cancha in canchas" :key="cancha.id" class="bg-white rounded-xl overflow-hidden shadow-[0_4px_15px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:-translate-y-[5px]">
+            <img :src="cancha.imagen" :alt="cancha.nombre" class="w-full h-[160px] object-cover">
+            <div class="p-4">
+              <h4 class="text-[1.1rem] text-[#2c3e50] mb-[0.3rem]">{{ cancha.nombre }}</h4>
+              <p class="text-[#666] my-[0.2rem] text-[0.9rem]">{{ cancha.ubicacion }}</p>
+              <p class="text-[#666] my-[0.2rem] text-[0.9rem]">{{ cancha.tipo }}</p>
+              <p class="text-[1rem] font-bold text-[#27ae60] my-[0.3rem]">{{ cancha.telefono }}</p>
+              <div class="flex flex-wrap gap-[0.4rem] my-[0.5rem]">
+                <span v-for="caracteristica in cancha.caracteristicas" :key="caracteristica" class="bg-[#e3f2fd] text-[#1976d2] px-[0.6rem] py-[0.2rem] rounded-[20px] text-[0.75rem]">
                   {{ caracteristica }}
                 </span>
               </div>
@@ -106,107 +106,3 @@ const canchas = ref([
   }
 ])
 </script>
-
-<style scoped>
-.main {
-  flex: 1;
-  padding: 2rem 0;
-  background: #f8f9fa;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.hero {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #666;
-}
-
-.canchas-list h3 {
-  font-size: 2rem;
-  color: #2c3e50;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-
-.canchas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  padding: 0 0.5rem;
-}
-
-.cancha-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.cancha-card:hover {
-  transform: translateY(-5px);
-}
-
-.cancha-imagen {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-
-.cancha-info {
-  padding: 1rem;
-}
-
-.cancha-info h4 {
-  font-size: 1.1rem;
-  color: #2c3e50;
-  margin-bottom: 0.3rem;
-}
-
-.ubicacion, .tipo {
-  color: #666;
-  margin: 0.2rem 0;
-  font-size: 0.9rem;
-}
-
-.telefono {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #27ae60;
-  margin: 0.3rem 0;
-}
-
-.caracteristicas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin: 0.5rem 0;
-}
-
-.tag {
-  background: #e3f2fd;
-  color: #1976d2;
-  padding: 0.2rem 0.6rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
-}
-
-
-
-</style>

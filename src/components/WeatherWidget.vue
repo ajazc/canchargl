@@ -1,12 +1,12 @@
 <template>
-  <div class="weather-widget" v-if="weather">
-    <div class="weather-content">
-      <span class="weather-icon">{{ weatherCondition.icon }}</span>
-      <div class="weather-info">
-        <span class="location">Río Gallegos</span>
-        <div class="temp-row">
-          <span class="temperature">{{ Math.round(weather.temperature) }}°C</span>
-          <span class="condition">{{ weatherCondition.label }}</span>
+  <div class="bg-white/20 px-4 py-2 rounded-xl backdrop-blur-sm text-white text-sm border border-white/10 transition-all duration-300 ease-in-out hover:bg-white/30" v-if="weather">
+    <div class="flex items-center gap-3">
+      <span class="text-[1.8rem]">{{ weatherCondition.icon }}</span>
+      <div class="flex flex-col">
+        <span class="text-xs opacity-90 uppercase tracking-wide font-semibold">Río Gallegos</span>
+        <div class="flex items-center gap-2">
+          <span class="text-lg font-bold">{{ Math.round(weather.temperature) }}°C</span>
+          <span class="text-sm opacity-90 pl-2 border-l border-white/40">{{ weatherCondition.label }}</span>
         </div>
       </div>
     </div>
@@ -71,60 +71,4 @@ onMounted(() => {
 })
 </script>
 
-<style scoped>
-.weather-widget {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  backdrop-filter: blur(5px);
-  color: white;
-  font-size: 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
 
-.weather-widget:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.weather-content {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.weather-icon {
-  font-size: 1.8rem;
-}
-
-.weather-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.location {
-  font-size: 0.75rem;
-  opacity: 0.9;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 600;
-}
-
-.temp-row {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.temperature {
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-
-.condition {
-  font-size: 0.9rem;
-  opacity: 0.9;
-  padding-left: 0.5rem;
-  border-left: 1px solid rgba(255,255,255,0.4);
-}
-</style>
