@@ -39,7 +39,7 @@ import fairplayImg from '../assets/Fairplay.png'
 import diasImg from '../assets/Dias.png'
 import hispanoImg from '../assets/Hispano.png'
 import yatelImg from '../assets/Yatel.png'
-
+import laCurtiembreImg from '../assets/Curtiembre.png'
 const canchas = ref([
   {
     id: 1,
@@ -48,7 +48,7 @@ const canchas = ref([
     tipo: 'Fútbol 5, Futbol 6',
     telefono: '2966 58-8195' ,
     imagen: laGambetaImg,
-    caracteristicas: ['Techo', 'Iluminación', 'Vestuarios']
+    caracteristicas: ['Césped sintético','Techo', 'Iluminación', 'Vestuarios']
   },
   {
     id: 2,
@@ -73,9 +73,9 @@ const canchas = ref([
     nombre: 'Polideportivo Diaz',
     ubicacion: 'Juan Bark y Río Grande',
     tipo: 'Fútbol 5',
-    telefono: '02966 70-1870',
+    telefono: '2966 70-1870',
     imagen: diasImg,
-    caracteristicas: ['Techo', 'Estacionamiento']
+    caracteristicas: ['Césped sintético','Techo', 'Estacionamiento']
   },
   {
     id: 5,
@@ -84,16 +84,25 @@ const canchas = ref([
     tipo: 'Fútbol 11, Fútbol 8',
     telefono: '2966 46-7395',
     imagen: hispanoImg,
-    caracteristicas: ['Iluminación', 'Estacionamiento']
+    caracteristicas: ['Césped sintético','Iluminación', 'Estacionamiento']
   },
   {
     id: 6,
     nombre: 'Polideportivo Yatel  ',
     ubicacion: 'Av. Parque Industrial 645',
     tipo: 'Fútbol 5, Fútbol 6',
-    telefono: '02966 70-1870',
+    telefono: '2966 52-5761',
     imagen: yatelImg,
-    caracteristicas: ['Techo', 'Iluminación', 'Estacionamiento', 'Cancha adentro']
+    caracteristicas: ['Césped sintético', 'Iluminación', 'Estacionamiento', 'Cancha adentro']
+  }
+  ,{
+    id: 7,
+    nombre: 'La Curtiembre',
+    ubicacion: 'Facundo Quiroga 99-199',
+    tipo: 'Fútbol 5, Fútbol 6',
+    telefono: '2966 41-2650',
+    imagen: laCurtiembreImg,
+    caracteristicas: ['Césped sintético', 'Iluminación', 'Estacionamiento', 'Cancha adentro']
   }
 ])
 </script>
